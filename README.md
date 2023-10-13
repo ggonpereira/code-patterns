@@ -45,3 +45,32 @@ Depois:
   {
   "\*.{ts,tsx}": ["prettier --write"]
   }
+- Roda `yarn lint-staged`
+
+#### 5 - Husky
+
+Cria gatilhos específicos em algum ciclo de vida dos nossos commits.
+
+Roda:
+
+- npx husky-init
+- yarn
+
+Abre o `.husky/pre-commit` e configura os scripts que quer rodar antes de executar um commit. Nesse caso, adicione `yarn lint-staged`
+
+#### 6 - Conventional Commits
+
+Padroniza commits no código com o que eles fazem.
+
+Instala:
+
+- @commitlint/{cli,config-conventional}
+
+Depois:
+
+- Cria um arquivo `.commitlintrc` e adiciona:
+  {
+  "extends": ["@commitlint/config-conventional"]
+  }
+- Depois roda:
+  `yarn husky add .husky/commit-msg 'yarn commitlint --edit ${1}'`
