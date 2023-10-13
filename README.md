@@ -30,3 +30,18 @@ Depois:
 - Adiciona o "prettier" no .eslintrc.json dentro de "extends", "plugin" e em "rules", adicione:
   _"prettier/prettier": "error"_
 - Cria um arquivo ".prettierrc" e adiciona o "{ singleQuote: true }"
+
+#### 4 - Lint Staged
+
+Roda algum comando nos arquivos que estão em stage no Git.
+
+Instala:
+
+- lint-staged
+
+Depois:
+
+- Cria um arquivo .lintstagedrc.json no root e adiciona:
+  {
+  "\*.{ts,tsx}": ["prettier --write"]
+  }
